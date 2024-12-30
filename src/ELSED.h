@@ -10,39 +10,39 @@ namespace upm {
 
 struct ELSEDParams {
   // Gaussian kernel size
-  int ksize = 5;
+  int ksize = 0;
   // Sigma of the gaussian kernel
-  float sigma = 1;
+  float sigma = 0;
   // The threshold of pixel gradient magnitude.
   // Only those pixels whose gradient magnitude are larger than
   // this threshold will be taken as possible edge points.
-  float gradientThreshold = 30;
+  float gradientThreshold = 0;
   // If the pixel's gradient value is bigger than both of its neighbors by a
   // certain anchorThreshold, the pixel is marked to be an anchor.
-  uint8_t anchorThreshold = 8;
+  uint8_t anchorThreshold = 0;
   // Anchor testing can be performed at different scan intervals, i.e.,
   // every row/column, every second row/column
-  unsigned int scanIntervals = 2;
+  unsigned int scanIntervals = 0;
 
   // Minimum line segment length
-  int minLineLen = 15;
+  int minLineLen = 0;
   // Threshold used to check if a list of edge points for a line segment
-  double lineFitErrThreshold = 0.2;
+  double lineFitErrThreshold = 0.;
   // Threshold used to check if a new pixel is part of an already fit line segment
-  double pxToSegmentDistTh = 15;
+  double pxToSegmentDistTh = 0;
   // Threshold used to validate the junction jump region. The first eigenvalue of the gradient
   // auto-correlation matrix should be at least junctionEigenvalsTh times bigger than the second eigenvalue
-  double junctionEigenvalsTh = 10;
+  double junctionEigenvalsTh = 0;
   // the difference between the perpendicular segment direction and the direction of the gradient
   // in the region to be validated must be less than junctionAngleTh radians
-  double junctionAngleTh = 10 * (M_PI / 180.0);
+  double junctionAngleTh = 0 * (M_PI / 180.0);
   // The threshold over the validation criteria. For ELSED, it is the gradient angular error in pixels.
-  double validationTh = 0.15;
+  double validationTh = 0.0;
 
   // Whether to validate or not the generated segments
   bool validate = true;
   // Whether to jump over junctions
-  bool treatJunctions = true;
+  bool treatJunctions = false;
   // List of junction size that will be tested (in pixels)
   std::vector<int> listJunctionSizes = {5, 7, 9};
 };
