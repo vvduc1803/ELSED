@@ -29,7 +29,7 @@ struct ELSEDParams {
   // Threshold used to check if a list of edge points for a line segment
   double lineFitErrThreshold = 0.2;
   // Threshold used to check if a new pixel is part of an already fit line segment
-  double pxToSegmentDistTh = 1.5;
+  double pxToSegmentDistTh = 15;
   // Threshold used to validate the junction jump region. The first eigenvalue of the gradient
   // auto-correlation matrix should be at least junctionEigenvalsTh times bigger than the second eigenvalue
   double junctionEigenvalsTh = 10;
